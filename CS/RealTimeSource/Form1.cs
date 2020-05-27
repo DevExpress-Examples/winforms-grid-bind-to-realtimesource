@@ -9,99 +9,83 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace RealTimeSourceWinForms
-{
-    public partial class Form1 : Form
-    {
+namespace RealTimeSourceWinForms {
+    public partial class Form1 : Form {
         BindingList<Data> Persons;
         int Count = 50;
         Random Random = new Random();
-        public Form1()
-        {
+        public Form1() {
 
             InitializeComponent();
             Persons = new BindingList<Data>();
-            for (int i = 0; i < Count; i++)
-                Persons.Add(new Data
-                {
+            for(int i = 0; i < Count; i++)
+                Persons.Add(new Data {
                     Id = i,
                     Text = "Text" + i,
                     Progress = GetNumber()
                 });
 
 
-            RealTimeSource rts = new RealTimeSource()
-                        {
-                            DataSource = Persons
-                        };
+            RealTimeSource rts = new RealTimeSource() {
+                DataSource = Persons
+            };
             gridControl1.DataSource = rts;
 
-            Timer timer = new Timer();
+            Timer timer = new Timer(components);
             timer.Interval = 10;
             timer.Tick += Tick;
             timer.Start();
 
-            gridView1.Columns["Progress"].ColumnEdit = new RepositoryItemProgressBar();
+            RepositoryItemProgressBar item = new RepositoryItemProgressBar();
+            gridControl1.RepositoryItems.Add(item);
+            gridView1.Columns["Progress"].ColumnEdit = item;
         }
-        private void Tick(object sender, EventArgs e)
-        {
+        private void Tick(object sender, EventArgs e) {
             int index = Random.Next(0, Count);
             Persons[index].Id = GetNumber();
             Persons[index].Text = "Text" + GetNumber();
             Persons[index].Progress = GetNumber();
         }
-        int GetNumber()
-        {
+        int GetNumber() {
             return Random.Next(0, Count);
         }
     }
-    public class Data : INotifyPropertyChanged
-    {
+    public class Data : INotifyPropertyChanged {
         private int _Id;
         public string _Text;
         public double _Progress;
 
-        public int Id
-        {
-            get
-            {
+        public int Id {
+            get {
                 return _Id;
             }
-            set
-            {
+            set {
                 _Id = value;
                 NotifyPropertyChanged("Id");
             }
         }
-        public string Text
-        {
-            get
-            {
+        public string Text {
+            get {
                 return _Text;
             }
-            set
-            {
+            set {
                 _Text = value;
                 NotifyPropertyChanged("Text");
             }
         }
-        public double Progress
-        {
-            get
-            {
+        public double Progress {
+            get {
                 return _Progress;
             }
-            set
-            {
+            set {
                 _Progress = value;
                 NotifyPropertyChanged("Progress");
             }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        void NotifyPropertyChanged(string name)
-        {
-            if (PropertyChanged != null)
+        void NotifyPropertyChanged(string name) {
+            if(PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
         }
     }
