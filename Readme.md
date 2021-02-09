@@ -9,6 +9,13 @@
 
 <p> </p><p>This simple example illustrates how to use RealTimeSource with a grid.</p>
 
+<b>See also:</b>
+
+[DevExpress WinForms Best Practices - Update and Load Data from non UI Threads, and Deal with Frequently Updated Data](https://go.devexpress.com/CheatSheets_WinForms_Examples_T947915.aspx)
+
+[DevExpress WinForms Troubleshooting - Grid Control](https://go.devexpress.com/CheatSheets_WinForms_Examples_T934742.aspx)
+
+
 <br/>
 
 
