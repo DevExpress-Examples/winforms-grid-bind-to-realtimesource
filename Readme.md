@@ -9,7 +9,7 @@
 * [Form1.cs](./CS/RealTimeSource/Form1.cs) (VB: [Form1.vb](./VB/RealTimeSource/Form1.vb))
 * [Program.cs](./CS/RealTimeSource/Program.cs) (VB: [Program.vb](./VB/RealTimeSource/Program.vb))
 <!-- default file list end -->
-# WinForms Data Grid - How to use the RealTimeSource component
+# WinForms Data Grid - Bind to RealTimeSource
 
 This example demonstrates how to create and configure the [RealTimeSource](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.RealTimeSource) component, and bind it to the WinForms Data Grid control. The [RealTimeSource](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.RealTimeSource) component acts as an asynchronous bridge between the grid control and rapidly changing data.
 
