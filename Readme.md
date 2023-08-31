@@ -11,7 +11,7 @@
 <!-- default file list end -->
 # WinForms Data Grid - Bind to RealTimeSource
 
-This example demonstrates how to create and configure the [RealTimeSource](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.RealTimeSource) component, and bind it to the WinForms Data Grid control. The [RealTimeSource](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.RealTimeSource) component acts as an asynchronous bridge between the grid control and rapidly changing data.
+This example demonstrates how to create and configure the [RealTimeSource](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.RealTimeSource) object, and bind it to the WinForms Data Grid control. The [RealTimeSource](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.RealTimeSource) acts as an asynchronous bridge between the grid control and rapidly changing data.
 
 
 ## Documentation
